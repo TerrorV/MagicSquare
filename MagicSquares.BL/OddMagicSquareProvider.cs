@@ -20,13 +20,20 @@ namespace MagicSquares.BL
 
                 var isRightMost = x + 1 == squareSize;
                 var isTopMost = y + 1 == squareSize;
+
+                // Advance one step
                 x = isRightMost ? 0 : x + 1;
                 y = isTopMost ? 0 : y + 1;
+
                 var isBusy = squareArray[x, y] > 0;
                 if(isBusy)
                 {
-                    x = isRightMost ? squareSize - 2 : x-2;
+                    // Back one step
+                    x = isRightMost ? squareSize - 1 : x-1;
                     y = isTopMost ? squareSize - 1 : y-1;
+
+                    // Change track
+                    x--;
                 }
             }
 
