@@ -43,8 +43,10 @@
     <Compile Include="DoublyEvenMagicSquareProvider.cs" />
     <Compile Include="EvenMagicSquareProvider.cs" />
     <Compile Include="MagicConstantProvider.cs" />
+    <Compile Include="MagicSquareService.cs" />
     <Compile Include="OddMagicSquareProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SquareProviderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MagicSquares.BL.Abstract\MagicSquares.BL.Abstract.csproj">

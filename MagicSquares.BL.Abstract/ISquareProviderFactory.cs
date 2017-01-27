@@ -8,6 +8,6 @@ namespace MagicSquares.BL.Abstract
 {
     public interface ISquareProviderFactory
     {
-        ISquareProvider GetProvider(int squareSize);
+        ISquareProvider GetProvider<T>() where T : ISquareProvider;
     }
 }
