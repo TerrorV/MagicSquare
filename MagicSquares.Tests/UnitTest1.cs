@@ -10,7 +10,7 @@ namespace MagicSquares.Tests
         public void TestCalculateMagicConstant()
         {
             int squareSize = 3;
-            int magicConstant = CalculateMagicConstant(squareSize);
+            long magicConstant = CalculateMagicConstant(squareSize);
             var magicSquare = new int[squareSize];
 
             Assert.AreEqual(magicConstant, 15);
@@ -25,8 +25,32 @@ namespace MagicSquares.Tests
         [TestMethod]
         public void TestGenerateSquare()
         {
-            int squareSize = 3;
+            int squareSize = 20001;
+            long magicConstant = CalculateMagicConstant(squareSize);
+            Assert.IsTrue(magicConstant > 0);
             int[,] magicSquare = GenerateOddSquare(squareSize);
+
+            long diagSum1 = 0;
+            long diagSum2 = 0;
+            for (int i = 0; i < squareSize; i++)
+            {
+                long rowSum = 0;
+                long colSum = 0;
+                diagSum1 += magicSquare[i, i];
+                diagSum2 += magicSquare[i, squareSize - i - 1];
+
+                for (int j = 0; j < squareSize; j++)
+                {
+                    rowSum += magicSquare[i, j];
+                    colSum += magicSquare[j, i];
+                }
+
+                Assert.AreEqual(magicConstant, rowSum);
+                Assert.AreEqual(magicConstant, colSum);
+            }
+
+            Assert.AreEqual(magicConstant, diagSum1);
+            Assert.AreEqual(magicConstant, diagSum2);
 
         }
 
@@ -38,9 +62,8 @@ namespace MagicSquares.Tests
             var y = (squareSize - 1) / 2;
             ////var x = 3-squareSize;
             ////var y = (squareSize - 1) / 2;
-            for (int i = 1; i <= squareSize*squareSize; i++)
+            for (int i = 1; i <= squareSize * squareSize; i++)
             {
-
                 squareArray[x, y] = i;
 
                 //x++;
@@ -57,12 +80,11 @@ namespace MagicSquares.Tests
                     {
                         x++;
                         y++;
-
                     }
                 }
                 else
                 {
-                    if (x + 1== squareSize && y + 1== squareSize)
+                    if (x + 1 == squareSize && y + 1 == squareSize)
                     {
                         if (squareArray[0, 0] > 0)
                         {
@@ -73,9 +95,8 @@ namespace MagicSquares.Tests
                             x = 0;
                             y = 0;
                         }
-
                     }
-                    else if(x + 1 == squareSize)
+                    else if (x + 1 == squareSize)
                     {
                         if (squareArray[0, y + 1] > 0)
                         {
@@ -84,9 +105,10 @@ namespace MagicSquares.Tests
                         else
                         {
                             x = 0;
+                            y++;
                         }
                     }
-                    else if(y + 1 == squareSize)
+                    else if (y + 1 == squareSize)
                     {
                         if (squareArray[x + 1, 0] > 0)
                         {
@@ -95,8 +117,8 @@ namespace MagicSquares.Tests
                         else
                         {
                             y = 0;
+                            x++;
                         }
-
                     }
                 }
 
@@ -159,7 +181,7 @@ namespace MagicSquares.Tests
             return squareArray;
         }
 
-        private int CalculateMagicConstant(int squareSize)
+        private long CalculateMagicConstant(long squareSize)
         {
             return squareSize * (squareSize * squareSize + 1) / 2;
         }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSquares.BL", "MagicSqu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSquares.BL.Tests", "MagicSquares.BL.Tests\MagicSquares.BL.Tests.csproj", "{872254BA-7D8C-4B6D-84E3-7F68438EE463}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSquares.BL.Abstract", "MagicSquares.BL.Abstract\MagicSquares.BL.Abstract.csproj", "{63BEB391-C75A-4F00-B0D7-23FBA399DA2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{872254BA-7D8C-4B6D-84E3-7F68438EE463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{872254BA-7D8C-4B6D-84E3-7F68438EE463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{872254BA-7D8C-4B6D-84E3-7F68438EE463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BEB391-C75A-4F00-B0D7-23FBA399DA2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BEB391-C75A-4F00-B0D7-23FBA399DA2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BEB391-C75A-4F00-B0D7-23FBA399DA2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BEB391-C75A-4F00-B0D7-23FBA399DA2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,3 +6,7 @@ MagicSquares/bin/
 MagicSquares/obj/
 packages/
 MagicSquares.BL/obj/
+MagicSquares.BL.Abstract/bin/
+MagicSquares.BL.Abstract/obj/
+MagicSquares.BL.Tests/bin/
+MagicSquares.BL/bin/
