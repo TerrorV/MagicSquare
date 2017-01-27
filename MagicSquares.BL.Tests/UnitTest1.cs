@@ -6,17 +6,17 @@ using System.Diagnostics;
 namespace MagicSquares.BL.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class When_generating_Even_Square
     {
         [TestMethod]
-        public void TestGenerateEvenSquare()
+        public void Should_generate_magic_square()
         {
             int squareSize = 10014;
             var magicConstantProvider = new MagicConstantProvider();
             long magicConstant = new MagicConstantProvider().CalculateMagicConstant(squareSize);
             Assert.IsTrue(magicConstant > 0);
             int[,] magicSquare = new EvenMagicSquareProvider(new OddMagicSquareProvider()).GenerateMagicSquare(squareSize);
-            
+
             long diagSum1 = 0;
             long diagSum2 = 0;
             for (int i = 0; i < squareSize; i++)
@@ -38,27 +38,29 @@ namespace MagicSquares.BL.Tests
 
             Assert.AreEqual(magicConstant, diagSum1);
             Assert.AreEqual(magicConstant, diagSum2);
-
-
         }
+    }
+    //private void PrintSquare(int[,] magicSquare)
+    //{
+    //    var squareSize = magicSquare.GetLength(0);
+    //    for (int i = 0; i < squareSize; i++)
+    //    {
+    //        for (int j = 0; j < squareSize; j++)
+    //        {
+    //            Debug.Write($"{magicSquare[i, j]} \t");
+    //        }
 
-        private void PrintSquare(int[,] magicSquare)
-        {
-            var squareSize = magicSquare.GetLength(0);
-            for (int i = 0; i < squareSize; i++)
-            {
-                for (int j = 0; j < squareSize; j++)
-                {
-                    Debug.Write($"{magicSquare[i, j]} \t");
-                }
+    //        Debug.WriteLine(string.Empty);
+    //    }
+    //}
 
-                Debug.WriteLine(string.Empty);
-            }
-        }
-
+    [TestClass]
+    public class When_generating_Doubly_Even_Square
+    {
         [TestMethod]
-        public void TestGenerateDoublyEvenSquare()
+        public void Should_generate_magic_square()
         {
+
             int squareSize = 10000;
             var magicConstantProvider = new MagicConstantProvider();
             long magicConstant = new MagicConstantProvider().CalculateMagicConstant(squareSize);
@@ -88,11 +90,15 @@ namespace MagicSquares.BL.Tests
             Assert.AreEqual(magicConstant, diagSum2);
 
         }
+    }
 
-
+    [TestClass]
+    public class When_generating_Odd_Square
+    {
         [TestMethod]
-        public void TestGenerateOddSquare()
+        public void Should_generate_magic_square()
         {
+
             int squareSize = 10001;
             long magicConstant = new MagicConstantProvider().CalculateMagicConstant(squareSize);
             Assert.IsTrue(magicConstant > 0);
@@ -121,10 +127,15 @@ namespace MagicSquares.BL.Tests
             Assert.AreEqual(magicConstant, diagSum2);
 
         }
+    }
 
+    [TestClass]
+    public class When_generating_Magic_Square_constant
+    {
         [TestMethod]
-        public void TestCalculateMagicConstant()
+        public void Should_generate_a_positive_constant()
         {
+
             var constantProvider = new MagicConstantProvider();
             long magicConstant = constantProvider.CalculateMagicConstant(3);
             Assert.IsTrue(magicConstant > 0);
