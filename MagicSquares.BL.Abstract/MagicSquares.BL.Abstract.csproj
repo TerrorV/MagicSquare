@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IMagicConstantProvider.cs" />
     <Compile Include="ISquareProvider.cs" />
+    <Compile Include="ISquareProviderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
