@@ -115,7 +115,10 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\app.js" />
+    <Content Include="Views\config\config.html" />
+    <Content Include="Views\config\config.js" />
     <Content Include="Views\index.html" />
+    <Content Include="Views\index.js" />
     <Content Include="Views\result\result.html" />
     <Content Include="Views\result\result.js" />
     <Content Include="Web.config" />

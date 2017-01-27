@@ -1,0 +1,18 @@
+﻿<div ng-controller="ConfigCtrl as config">
+    <ul>
+        <li>
+            <input type="number" name="name" value="3" min="3" max="10000" ng-model="config.squareSize" ng-change="config.LoadConstant()" />
+        </li>
+        <li ng-hide="config.squareSize == NaN">
+            square constant: {{config.constant}}
+        </li>
+        <li ng-hide="config.squareSize == NaN">
+            <p>
+            Max element size: {{config.squareSize * config.squareSize}}
+            </p>
+            <a href="#!/result/{{config.squareSize}}">Display Magical Square</a>
+        </li>
+
+    </ul>
+
+</div>
