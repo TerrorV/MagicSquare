@@ -2,5 +2,7 @@
 {
     public interface ISquareProvider
     {
+        int[,] GenerateMagicSquare(int squareSize);
+
     }
 }

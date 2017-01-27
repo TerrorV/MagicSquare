@@ -53,6 +53,16 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MagicSquares.BL.Abstract\MagicSquares.BL.Abstract.csproj">
+      <Project>{63BEB391-C75A-4F00-B0D7-23FBA399DA2C}</Project>
+      <Name>MagicSquares.BL.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagicSquares.BL\MagicSquares.BL.csproj">
+      <Project>{A9F26139-EE23-4BD3-BB5A-0D35574E7042}</Project>
+      <Name>MagicSquares.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

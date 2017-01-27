@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoublyEvenMagicSquareProvider.cs" />
+    <Compile Include="EvenMagicSquareProvider.cs" />
+    <Compile Include="MagicConstantProvider.cs" />
     <Compile Include="OddMagicSquareProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
