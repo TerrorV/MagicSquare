@@ -1,10 +1,7 @@
 ﻿<p>The mighty square!!</p>
 <div ng-controller="ResultCtrl as result">
-    <!--<ul>
-        <li ng-repeat="row in result.gridResult" style="margin:2px;">
-            <span ng-repeat="col in row" style="border:1px solid; margin: 1px">{{col}}</span>
-        </li>
-    </ul>-->
+    <a href="/Views/index.html">Back</a>
+
     <table>
         <tr ng-repeat="row in result.gridResult" style="margin:2px;">
             <td ng-repeat="col in row" style="border:1px solid; margin: 1px" data-ng-class="{'first-element': col==1, 'last-element': col==result.squareSize*result.squareSize}">{{col}}</td>
