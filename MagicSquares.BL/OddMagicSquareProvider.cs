@@ -18,56 +18,15 @@ namespace MagicSquares.BL
             {
                 squareArray[x, y] = i;
 
-                if (x + 1 < squareSize && y + 1 < squareSize)
+                var isRightMost = x + 1 == squareSize;
+                var isTopMost = y + 1 == squareSize;
+                x = isRightMost ? 0 : x + 1;
+                y = isTopMost ? 0 : y + 1;
+                var isBusy = squareArray[x, y] > 0;
+                if(isBusy)
                 {
-                    if (squareArray[x + 1, y + 1] > 0)
-                    {
-                        x--;
-                    }
-                    else
-                    {
-                        x++;
-                        y++;
-                    }
-                }
-                else
-                {
-                    if (x + 1 == squareSize && y + 1 == squareSize)
-                    {
-                        if (squareArray[0, 0] > 0)
-                        {
-                            x--;
-                        }
-                        else
-                        {
-                            x = 0;
-                            y = 0;
-                        }
-                    }
-                    else if (x + 1 == squareSize)
-                    {
-                        if (squareArray[0, y + 1] > 0)
-                        {
-                            x--;
-                        }
-                        else
-                        {
-                            x = 0;
-                            y++;
-                        }
-                    }
-                    else if (y + 1 == squareSize)
-                    {
-                        if (squareArray[x + 1, 0] > 0)
-                        {
-                            x--;
-                        }
-                        else
-                        {
-                            y = 0;
-                            x++;
-                        }
-                    }
+                    x = isRightMost ? squareSize - 2 : x-2;
+                    y = isTopMost ? squareSize - 1 : y-1;
                 }
             }
 
