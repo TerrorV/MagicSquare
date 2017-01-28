@@ -37,6 +37,5 @@ namespace MagicSquares.BL
 
             return squareArray;
         }
-
     }
 }
